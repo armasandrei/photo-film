@@ -1,0 +1,106 @@
+body{
+    --film-color: #000b;
+    --main-bg-dark-color: #0D0000;
+    --main-bg-light-color: #8C6F5E;
+}
+
+body{
+   background: 
+  
+    radial-gradient(
+        var(--main-bg-light-color),
+        var(--main-bg-dark-color)
+        ),
+
+        url(images/wood-ge72f4eef5_1280.jpg);
+
+    background-blend-mode: hard-light;
+    background-size:cover, cover ;
+     
+    height: 100vh;
+    margin: 0   ;
+}
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+}
+.origin {
+    /* width: 20px; */
+    /* height: 20px; */
+    /* background-color: green; */
+
+    position: absolute; 
+    top: 50%;
+    left: 33%;
+}
+
+.v-guide{
+    position: absolute;
+    height: 100vh;
+    top: -50vh;
+    left: 0;
+    width: 1px;
+    background-color: #555;
+}
+.h-guide{
+    position: absolute;
+    width: 100vh;
+    left: -33vh;
+    top: 0;
+    height:  1px;
+    background-color: #555;
+}
+
+.origin .film{
+  /* border-image-source: -moz-radial-gradient(); */
+  /* border-image-width: 50px 50px; */
+    /* Hint : Multiple background */
+    /* background: radial-gradient(transparent 49%,#000 51%) repeat-x */
+                /* radial-gradient(transparent 49%, #000 51%) repeat-x;  */
+   
+   
+    background-size: 20px 27px, 20px 27px;
+
+    filter: drop-shadow(0.5vh 0.5vh 0.5vh var(--film-color));
+
+    /* Atention!!!!! USING css calc() */
+
+    width: calc( 7 * ( 2 * 1vw + 400px ) );
+
+    /* Atention!!!!! USING css calc() */
+
+    font-size: 0;
+
+    position: relative;
+    left: -33vw;
+    top: -178px;
+}
+
+.origin .film::before{
+    content: "";
+   height: 3vh;
+    display: block;
+    background: radial-gradient(transparent 49%, var(--film-color) 51%) repeat-x ;
+    background-size: 2vw 100%;
+}
+.origin .film::after{
+    content: "";
+    height: 3vh;
+    display: block;
+    background: radial-gradient(transparent 49%, var(--film-color) 51%) repeat-x ;
+    background-size: 2vw 100%;
+}
+
+.origin .film li{
+display: inline-block ;
+padding: 0vh 1vw;
+background-color:  var(--film-color);
+}
+
+.origin .film li img {
+/* opacity: 0; */
+/* visibility: hidden; */
+
+}
